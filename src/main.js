@@ -2,7 +2,16 @@ import Vue from 'vue'
 import router from './router'
 import axios from 'axios'
 import App from './App.vue'
-import env from './env'
+// import env from './env'
+// import为预编译加载，在编译时就被加载
+
+// mock开关
+const mock = true;
+if(mock){
+  // require为执行时加载
+  // 如果在预编译加载则永远走mock
+  require('./mock/api');
+}
 
 // 根据前端的跨域方式做调整 - 代理
 axios.defaults.baseURL = '/api';
