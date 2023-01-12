@@ -8,7 +8,7 @@ module.exports = defineConfig({
     // 用代理方式进行跨域
     proxy:{
       '/api':{
-        target: 'https://www.imooc.com',
+        target: 'http://mall-pre.springboot.cn',
         changeOrigin:true,
         pathRewrite:{
           '/api':'' // /api/a/b => /a/b

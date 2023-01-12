@@ -6,7 +6,7 @@ import App from './App.vue'
 // import为预编译加载，在编译时就被加载
 
 // mock开关
-const mock = true;
+const mock = false;
 if(mock){
   // require为执行时加载
   // 如果在预编译加载则永远走mock
