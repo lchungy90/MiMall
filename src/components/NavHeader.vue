@@ -31,7 +31,7 @@
                 <li class="product" v-for="(item,index) in phoneList" :key="index">
                   <a :href="'/#/product/'+item.id" target="_blank">
                     <div class="pro-img">
-                      <img :src="item.mainImage" :alt="item.subtitle">
+                      <img v-lazy="item.mainImage" :alt="item.subtitle">
                     </div>
                     <div class="pro-name">{{ item.subtitle }}</div>
                     <!--使用过滤器-->
@@ -48,7 +48,7 @@
                 <li class="product" v-for="(item,index) in phoneList" :key="index">
                   <a :href="'/#/product/'+item.id" target="_blank">
                     <div class="pro-img">
-                      <img :src="item.mainImage" :alt="item.subtitle">
+                      <img v-lazy="item.mainImage" :alt="item.subtitle">
                     </div>
                     <div class="pro-name">{{ item.subtitle }}</div>
                     <!--使用过滤器-->
@@ -65,7 +65,7 @@
                 <li class="product" v-for="(item,index) in phoneList" :key="index">
                   <a :href="'/#/product/'+item.id" target="_blank">
                     <div class="pro-img">
-                      <img :src="item.mainImage" :alt="item.subtitle">
+                      <img v-lazy="item.mainImage" :alt="item.subtitle">
                     </div>
                     <div class="pro-name">{{ item.subtitle }}</div>
                     <!--使用过滤器-->

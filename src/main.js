@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import router from './router'
 import axios from 'axios'
+import VueLazyload from 'vue-lazyload'
 import App from './App.vue'
 // import env from './env'
 // import为预编译加载，在编译时就被加载
@@ -36,6 +37,9 @@ axios.interceptors.response.use(function(response){
 });
 
 Vue.prototype.axios = axios;
+Vue.use(VueLazyload,{
+  loading:'/imgs/loading-svg/loading-bars.svg'
+});
 Vue.config.productionTip = false
 
 new Vue({
