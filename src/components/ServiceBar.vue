@@ -25,6 +25,7 @@
     padding: 33px 0;
     color: $colorC;
     font-size: $fontI;
+    background-color: $colorG;
     li{
       display: inline-block;
       width: 24.9%; /*避免浏览器差异导致布局混乱 25%->24.9%*/
