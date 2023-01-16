@@ -2,6 +2,7 @@ import Vue from 'vue'
 import router from './router'
 import axios from 'axios'
 import VueLazyload from 'vue-lazyload'
+import VueCookie from 'vue-cookie'
 import App from './App.vue'
 // import env from './env'
 // import为预编译加载，在编译时就被加载
@@ -26,17 +27,22 @@ axios.defaults.timeout = 8000;
 // 对接口错误进行处理
 axios.interceptors.response.use(function(response){
   let res = response.data;
+  let path = location.hash;
   if(res.status == 0){
     return res.data;
   }else if(res.status == 10){
-    // window.location.href = '/#/login';
-    router.push('login');
+    if(path !='#/index'){
+      window.location.href = '/#/login';
+      // router.push('login');
+    }
   }else{
-    alert(res.message);
+    alert(res.msg);
+    return Promise.reject(res);
   }
 });
 
 Vue.prototype.axios = axios;
+Vue.use(VueCookie);
 Vue.use(VueLazyload,{
   loading:'/imgs/loading-svg/loading-bars.svg'
 });
